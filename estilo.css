@@ -1,0 +1,358 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-style: italic;
+    color: var(--light-color);
+}
+
+.game-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.game-option {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.game-option img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.game-option h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.game-option p {
+    color: #666;
+}
+
+.game-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    min-height: 400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.progress-container {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 30%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/* Estilos específicos para los juegos */
+.quiz-container {
+    text-align: center;
+}
+
+.quiz-question {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.quiz-option {
+    padding: 15px;
+    background-color: var(--light-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quiz-option:hover {
+    background-color: #d6eaf8;
+}
+
+.quiz-option.correct {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.quiz-option.incorrect {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.quiz-feedback {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.quiz-feedback.correct {
+    background-color: #d5f5e3;
+    color: var(--success-color);
+    display: block;
+}
+
+.quiz-feedback.incorrect {
+    background-color: #fadbd8;
+    color: var(--accent-color);
+    display: block;
+}
+
+.quiz-next {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.quiz-next:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos para la sopa de letras */
+.wordsearch-container {
+    overflow-x: auto;
+}
+
+.wordsearch-grid {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.wordsearch-cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+    user-select: none;
+}
+
+.wordsearch-cell.selected {
+    background-color: #d6eaf8;
+}
+
+.wordsearch-cell.found {
+    background-color: #d5f5e3;
+}
+
+.wordsearch-words {
+    margin-top: 20px;
+    columns: 2;
+}
+
+.wordsearch-word {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.wordsearch-word.found::before {
+    content: '✓';
+    color: var(--success-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Estilos para el desafío de código */
+.coding-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.coding-problem {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.coding-editor {
+    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+    padding: 10px;
+    resize: none;
+}
+
+.coding-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.coding-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.coding-run {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.coding-run:hover {
+    background-color: #2980b9;
+}
+
+.coding-reset {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.coding-reset:hover {
+    background-color: #d5dbdb;
+}
+
+.coding-output {
+    background-color: #2d3436;
+    color: #f5f6fa;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+    min-height: 100px;
+    white-space: pre-wrap;
+}
+
+.coding-test-result {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.coding-test-result.success {
+    background-color: #d5f5e3;
+    color: var(--success-color);
+    display: block;
+}
+
+.coding-test-result.failure {
+    background-color: #fadbd8;
+    color: var(--accent-color);
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-profile {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .progress-container {
+        width: 100%;
+    }
+}
