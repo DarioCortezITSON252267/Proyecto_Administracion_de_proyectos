@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeQuest - Juego Educativo de Programación</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CodeQuest</h1>
+            <p class="subtitle">Aventura en el mundo de la programación</p>
+        </header>
+
+        <div class="game-selector">
+            <div class="game-option" data-game="quiz">
+                <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Quiz">
+                <h3>Quiz de Programación</h3>
+                <p>Pon a prueba tus conocimientos con preguntas sobre diversos temas de programación.</p>
+            </div>
+            <div class="game-option" data-game="wordsearch">
+                <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="Sopa de Letras">
+                <h3>Sopa de Letras Tecno</h3>
+                <p>Encuentra términos clave de programación escondidos en la sopa de letras.</p>
+            </div>
+            <div class="game-option" data-game="coding">
+                <img src="https://cdn-icons-png.flaticon.com/512/1903/1903162.png" alt="Desafío de Código">
+                <h3>Desafío de Código</h3>
+                <p>Resuelve problemas prácticos escribiendo código real.</p>
+            </div>
+        </div>
+
+        <div class="game-container" id="game-container">
+            <!-- Aquí se cargará el juego seleccionado dinámicamente -->
+        </div>
+
+        <div class="user-profile">
+            <div class="profile-info">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Avatar" id="user-avatar">
+                <div>
+                    <h3 id="username">Invitado</h3>
+                    <p>Nivel: <span id="user-level">1</span></p>
+                    <p>Puntos: <span id="user-points">0</span></p>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quizzes.js"></script>
+    <script src="wordsearch.js"></script>
+    <script src="coding-challenge.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
